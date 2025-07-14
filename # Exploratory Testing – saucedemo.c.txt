@@ -1,0 +1,59 @@
+# Exploratory Testing – saucedemo.com
+🗓️ Date: 2025-07-10  
+👤 Tester: César
+
+---
+
+## 🔐 Credentials used
+- Username: `standard_user`  
+- Password: `secret_sauce`
+
+---
+
+## 🔍 Navigation Flow
+1. Login
+2. Browse products
+3. Add products to cart
+4. View cart
+5. Attempt to return to store
+6. Proceed to checkout
+7. Try sorting by price
+
+---
+
+## ⚠️ Observations / Issues
+
+### 🔹 Issue 1: Missing image and typo in cart
+- **Steps:**
+  1. Click "Add to cart" on a product  
+  2. Click the cart icon (🛒)  
+- **Expected result:** The product appears in the cart with its image and no spelling mistakes  
+- **Actual result:** Product appears, but the image is missing and there is a visible typo  
+- **Severity:** Medium
+
+---
+
+### 🔹 Issue 2: Returning to store logs out the user
+- **Steps:**
+  1. Add a product to the cart  
+  2. Click the cart icon  
+  3. Attempt to return to the store  
+- **Expected result:** User stays logged in  
+- **Actual result:** User is logged out and receives this message:  
+  `Epic sadface: You can only access '/cart.html' when you are logged in.`  
+- **Severity:** High
+
+---
+
+### 🔹 Issue 3: Price sorting does not work correctly
+- **Steps:**
+  1. Use the "Sort by Price: low to high" option  
+  2. Observe the order of products  
+- **Expected result:** Products are displayed from lowest to highest price  
+- **Actual result:** Sorting is incorrect; prices are not ordered properly  
+- **Severity:** Medium
+
+---
+
+## ✅ Positive findings (Things that work well)
+- Login works as expected and redirects to the product page
