@@ -1,0 +1,51 @@
+# State Transition Testing – saucedemo.com
+
+Date: 2025-07-23  
+Tester: César  
+System Under Test: https://www.saucedemo.com  
+Test Type: State Transition Testing
+
+---
+
+## TC01 – Login to main page
+
+Start state: Login page  
+Action: Enter accepted username and password  
+Expected state: Redirect to main page  
+Result: The user is redirected to the main page of Sauce Demo
+
+---
+
+## TC02 – Add item to cart and open cart
+
+Start state: Main page  
+Action: Add a product and go to the cart  
+Expected state: Redirect to "Your Cart"  
+Result: The user is redirected to "Your Cart"
+
+---
+
+## TC03 – Proceed to checkout information page
+
+Start state: Cart page  
+Action: Click on checkout  
+Expected state: Redirect to "Checkout: Your Information"  
+Result: The user is redirected to fill in First Name, Last Name, and Postal Code
+
+---
+
+## TC04 – Continue checkout and finish order
+
+Start state: "Checkout: Your Information"  
+Action: Click "Continue" and finish  
+Expected state: Redirect to "Checkout: Complete!"  
+Result: The user is redirected to "Checkout: Complete!"
+
+---
+
+## TC05 – Try to access cart page without login
+
+Start state: Not logged in  
+Action: Open /cart.html directly  
+Expected state: Show error or redirect to login  
+Result: Shows error: "Epic sadface: You can only access '/cart.html' when you are logged in."
