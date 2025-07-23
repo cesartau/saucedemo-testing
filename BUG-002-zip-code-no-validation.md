@@ -43,10 +43,5 @@ It accepts anything and moves to the next step without showing any error.
 I also tried leaving the field empty, and it still continues.  
 Same happens with the "First Name" and "Last Name" fields — you can write numbers or symbols and the system accepts it.
 
-## Attachments
-
-<img width="1920" height="913" alt="image" src="https://github.com/user-attachments/assets/37e59e11-090f-4e7e-846c-7a55a536ea56" />
-
-<img width="1920" height="913" alt="image" src="https://github.com/user-attachments/assets/1c85ce52-ac2b-4758-8a62-20befa1ffab9" />
 
 
