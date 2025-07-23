@@ -1,0 +1,60 @@
+# Test Design Technique: Equivalence Partitioning – Login Validation
+
+Technique: Equivalence Partitioning  
+Date: 2025-07-23  
+Tester: César  
+System Under Test: https://www.saucedemo.com  
+
+---
+
+## Objective
+
+Validate login input fields using equivalence partitioning based on the accepted format for usernames and password shown on the screen.
+
+---
+
+## Equivalence Classes
+
+| Field     | Partition Type | Description                              | Validity |
+|-----------|----------------|------------------------------------------|----------|
+| Username  | Letters + `_`  | Lowercase letters and underscores        | Valid    |
+| Username  | Letters + Numbers (no `_`) | Alphanumeric without special characters | Invalid  |
+| Password  | `secret_sauce` | Exact match with allowed format          | Valid    |
+| Password  | Alphanumeric (e.g. `abc123`) | Not matching expected password       | Invalid  |
+
+---
+
+## Test Cases
+
+### TC-001 – Valid username and valid password  
+- Username: `standard_user`  
+- Password: `secret_sauce`  
+- Expected Result: Login successful → Redirect to `/inventory.html`
+
+---
+
+### TC-002 – Invalid username (alphanumeric, no `_`)  
+- Username: `standarduser1`  
+- Password: `secret_sauce`  
+- Expected Result: Login fails with error message
+
+---
+
+### TC-003 – Invalid password (random letters with symbol)  
+- Username: `standard_user`  
+- Password: `abc#def`  
+- Expected Result: Login fails with error message
+
+---
+
+### TC-004 – Invalid password (letters + numbers, no underscore)  
+- Username: `standard_user`  
+- Password: `abc123`  
+- Expected Result: Login fails with error message
+
+---
+
+## Notes
+
+These cases represent different equivalence classes for inputs.  
+Only one valid combination should allow access. All others must fail cleanly with appropriate messages.
